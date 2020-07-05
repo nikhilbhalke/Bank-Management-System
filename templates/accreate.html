@@ -1,0 +1,77 @@
+{% extends "includes/layout.html" %}
+{% block body %}
+
+<section class="insert-data">
+
+
+  <div class="insert-form"><br>
+        <h3 class="h3 text-center p-4">Create Account</h3>
+        <div class="container text-center">
+            <form class="form" method="POST">
+                <div class="form-group row">
+                  <label for="cust-id" class="col col-form-label text-left">Customer Id : <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" id="cust-id" name="cust-id" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="type" class="col col-form-label text-left">Account Type : <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <select class="form-control text-left" id="type" name="type" required>
+                      <option value="">Select</option>
+                      <option>Saving</option>
+                      <option>Current</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="amount" class="col col-form-label text-left">Deposit Ammount : <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" id="amount" name="amount" required>
+                  </div>
+                </div>
+          
+
+
+                </div>
+                <div class="compulsory text-left text-danger">( <sup>*</sup> ) Fields are compulsory</div> 
+                <div class="buttons text-center p-2">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-danger">Reset</button>      
+                </div>
+         </form>
+        </div>
+    </div>
+</section>
+
+
+<script type="text/javascript">
+  function create(){
+    alert("Account Created Successfully...");
+  };
+
+  function exists(){
+    alert("Customer already has the same type of account!");
+  };
+
+  function invalid(){
+    alert("Inavlid Customer Id!")
+  };
+</script>
+
+
+
+{% if message %}
+  {% if message=="Successful" %}
+      <script>create()</script>
+  {% elif message=="Exists" %}
+      <script>exists()</script>
+  {% else %}
+      <script>invalid()</script>
+  {% endif %}
+{% endif %}
+
+
+
+
+{% endblock %}

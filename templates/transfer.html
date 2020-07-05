@@ -1,0 +1,74 @@
+{% extends "includes/layout2.html" %}
+{% block body %}
+
+
+
+<section class="insert-data"><br>
+  <h1>Transfer Money</h1><br><br>
+<div class="insert-form">
+   <div class="container text-center">
+            <form method="POST">
+                 <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Source Account Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left"><b>{{ account.AccountId }}</b></LABEL>
+                  </div>
+                </div>
+
+                   <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Source Account Type :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left"><b>{% if account.AccountType=="S" %} Savings {% else %} Current {% endif %}</b></LABEL>
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="targetAcc" class="col col-form-label text-left"><b>Target AccountId:</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" name="targetAcc" id="targetAcc" required>
+                  </div>
+                </div>
+
+               
+                <div class="form-group row">
+                  <label for="transferAmount" class="col col-form-label text-left"><b>Transfer Ammount : </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" id="transferAmount" name="transferAmount" required>
+                  </div>
+                </div>
+
+
+                <div class="buttons text-center p-2">                    
+                <button type="submit" class="btn btn-success">Transfer</button>      
+                </div>
+         </form>
+        </div>
+  </div>
+</section>
+
+
+
+
+<script type="text/javascript">
+  function lowbal(){
+    alert("Transfer amount is greater than account balance!");
+  };
+
+  function invalid(){
+    alert("Target account id entered is invalid!")
+  };
+</script>
+
+{% if message %}
+  {% if message=="Low Balance" %}
+      <script>lowbal()</script>
+  {% else %}
+      <script>invalid()</script>
+  {% endif %}
+{% endif %}
+
+
+
+
+
+{% endblock %}

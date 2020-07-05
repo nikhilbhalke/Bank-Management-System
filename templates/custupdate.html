@@ -1,0 +1,91 @@
+{% extends "includes/layout.html" %}
+{% block body %}
+<section class="update-data">
+
+
+  <div class="update-form">
+        <h3 class="h3 text-center p-4">Update Customer Information</h3>
+        <div class="container text-center">
+            <form onsubmit="update()">
+                <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Customer SSN Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-right"><b>Number</b></LABEL>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Customer Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-right"><b>Number</b></LABEL>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Old Customer Name :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-right"><b>Name</b></LABEL>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="cust-name" class="col col-form-label text-left"><b>New Name: </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="text-right" class="form-control text-left" id="cust-name">
+                  </div>
+                </div>
+
+
+                <div class="form-group row">
+                  <label for="cust-name" class="col col-form-label text-left"><b>Age : </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-right"><b>Age</b></LABEL>
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="cust-name" class="col col-form-label text-left"><b>New Age: </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="text-right" class="form-control text-left" id="cust-name">
+                  </div>
+                </div>
+                 <div class="form-group row">
+                  <label for="cust-name" class="col col-form-label text-left"><b>Address : </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-right"><b>Address</b></LABEL>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="cust-name" class="col col-form-label text-left"><b>New Address: </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="text-right" class="form-control text-left" id="cust-name">
+                  </div>
+                </div>
+
+
+
+
+
+                <div class="compulsory text-left text-danger">( <sup>*</sup> ) Fields are compulsory</div> 
+                <div class="buttons text-center p-2">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                <button type="reset" class="btn btn-danger">Reset</button>      
+                </div>
+         </form>
+        </div>
+    </div>
+  
+</section>
+
+
+
+<script type="text/javascript">
+  function update(){
+    alert("Customer Information Updated Successfully...");
+  }
+</script>
+
+
+
+{% endblock %}

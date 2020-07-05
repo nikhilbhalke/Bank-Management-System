@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Offline Bootstrap -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/all.min.css') }}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <title>Home</title>
+</head>
+<body>
+    <!-- Heading Section  -->
+    <div class="navbar-bg">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg" id="navigations">
+      <a class="navbar-brand" href="#"><b><span class="title-y"><img src="{{ url_for('static', filename='images/logo.png') }}" style="height: 45px;width: 50px;"> Crypto Finance</span><span class="title-w"> Bank</span></b></a>  
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-items">  
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/Cashier/Home">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/Cashier/AccountDetails">Account Details <span class="sr-only"></span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/Cashier/GetAccountStatement">Account Statement <span class="sr-only">(current)</span></a>
+          </li>         
+          <li class="nav-item active">
+            <a class="nav-link" href="/Logout">Logout <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+
+
+{% block body %} {% endblock %}
+
+
+
+  <!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Crypto Finance Bank was Founded on 15th june 2020 with the objective of providing with detail seevices based on the Retail Banking Operations.The Retail Internet Banking of Crypto Finance Bank offers a plethora of products and services to cater it's customers by providing certain animus services with an easy volving offers and ways to do required job without hurdling the process.</p>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Categories</h6>
+            <ul class="footer-links">
+              <li><a href="#">Retail and Consumer Banking</a></li>
+              <li><a href="#">Personal Internet Banking</a></li>
+              <li><a href="#">Corporate Internet Banking</a></li>
+              <li><a href="#">Debit and Credit Cards</a></li>
+             
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Quick Links</h6>
+            <ul class="footer-links">
+                <li><a href="#"> Email : care@cryptofinance.com</a></li>
+                <li>Contact No : 020 12344321</li>
+                <li>Address : Crypto Finance,<br>Pune Maharastra 412207</li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by 
+         <a href="#">Crypto Finance Bank</a>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
+
+
+    <!-- Navigation ended here -->
+
+    <!-- Offline Bootstrap JS -->
+ <!-- Form section Ends here -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

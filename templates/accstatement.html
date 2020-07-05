@@ -1,0 +1,67 @@
+{% extends "includes/layout2.html" %}
+{% block body %}
+
+
+
+
+<section class="insert-data"><br>
+  <h1>Account Statement</h1>
+<div class="insert-form">
+   <div class="container text-center">
+            <form method="POST">
+                 <div class="form-group row">
+                  <label for="acc-id" class="col col-form-label text-left"><b>Account Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" id="acc-id" name="acc-id" required>
+                  </div>
+                </div><br>
+                
+                <div class="form-group row">
+                  <label for="" class="col col-form-label text-left"><b>No of Transactions :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <select class="text-left" id="noOfTran" name="noOfTran" required="">
+                      <option value="">Select</option>
+                      <option>1 </option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                      <option>6</option>
+                      <option>7</option>
+                      <option>8 </option>
+                      <option>9 </option>
+                      <option>10 </option>
+                      <option>11</option>
+                      <option>12 </option>
+                      <option>13 </option>
+                      <option>14 </option>
+                      <option>15 </option>
+                      <option>16 </option>
+                      <option>17 </option>
+                      <option>18 </option>
+                      <option>19 </option>
+                      <option>20 </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="buttons text-center p-2">                    
+                <button type="submit" class="btn btn-success">Submit</button>      
+                </div>
+         </form>
+        </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+function wrong(){
+  alert("Invalid account id!");
+};
+</script>
+
+{% if message %}
+  {% if message=="WrongAcc" %}
+      <script>wrong()</script>
+  {% endif %}
+{% endif %}
+
+{% endblock %}

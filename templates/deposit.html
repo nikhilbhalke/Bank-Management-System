@@ -1,0 +1,64 @@
+{% extends "includes/layout2.html" %}
+{% block body %}
+
+
+
+<section class="insert-data"><br>
+  <h1>Deposit Money</h1><br><br>
+<div class="insert-form">
+   <div class="container text-center">
+            <form method='POST'>
+                 <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Customer Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left"><b>{{ account.CustomerId }}</b></LABEL>
+                  </div>
+                </div>
+
+                   <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Account Id :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left"><b>{{ account.AccountId }}</b></LABEL>
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Account Type :</b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left"><b>{% if account.AccountType=="S" %} Savings {% else %} Current {% endif %}</b></LABEL>
+                  </div>
+                </div>
+
+                 <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Account Balance: </b> <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <LABEL class="text-left" name="amount" id="amount"><b>{{ account.Amount }}</b></LABEL>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="ssn-id" class="col col-form-label text-left"><b>Deposit Ammount : </b><sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="text" class="form-control text-left" id="depositAmt" name="depositAmt" required>
+                  </div>
+                </div>
+
+
+                <div class="buttons text-center p-2">                    
+                <button type="submit" class="btn btn-success">Deposit</button>      
+                </div>
+         </form>
+        </div>
+  </div>
+</section>
+
+
+<script type="text/javascript">
+  function deposit(){
+    alert("Ammount Deposited Successfully...");
+   
+  }
+</script>
+
+
+{% endblock %}

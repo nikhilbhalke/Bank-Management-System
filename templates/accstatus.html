@@ -1,0 +1,44 @@
+{% extends "includes/layout.html" %}
+{% block body %}
+<section class="insert-data"><br><br>
+<div class="well text-center">
+        <h1>Account Status</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped">
+        <tr>
+            <th>Customer ID</th>
+            <th>Account ID</th>
+            <th>Account Type</th>
+            <th>Account Status</th>
+            <th>Last Transacted</th>
+            <th>Operations</th>
+        </tr>
+        {% for account in accounts %}
+            <tr>
+                <td>{{ account.CustomerId }}</td>
+                <td>{{ account.AccountId }}</td>
+                {% if account.AccountType=="S" %}
+                    <td>Savings</td>
+                {% else %}
+                    <td>Current</td>
+                {% endif %}
+
+                <td>{{ account.Status }}</td>
+                <td>{{ account.LastTransaction }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% if not accounts %}
+        <p>No Accounts available!</p>
+    {% endif %}
+        </div>
+    </div>
+
+
+</section>
+
+
+
+{% endblock %}

@@ -1,0 +1,108 @@
+{% extends "includes/layout2.html" %}
+{% block body %}
+
+
+
+<section class="insert-data"><br><br>
+<div class="well text-center">
+        <h1>Account Details</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped">
+        <tr>
+            <th>Customer ID</th>
+            <th>Account ID</th>
+            <th>Account Type</th>
+            <th>Account Balance</th>
+            <th>Operation</th>
+            
+        </tr>
+        <!-- <tr>
+            <td>01</td>
+            <td>Nikhil</td>
+            <td>abc@gmail.com</td>
+            <td>123456</td>
+            <td> <a href="/Cashier/Deposit" class="btn btn-success btn-xs" style="margin-right: 20px;">Deposit</a>       
+                <a href="/Cashier/Withdraw" class="btn btn-danger btn-xs" style="margin-right: 20px;">Withdraw</a>        
+                <a href="/Cashier/Transfer" class="btn btn-warning btn-xs" style="margin-right: 20px;">Transfer</a></td>
+        </tr> -->
+
+        {% if account %}
+            <tr>
+                <td>{{ account.CustomerId }}</td>
+                <td>{{ account.AccountId }}</td>
+                {% if account.AccountType=="S" %}
+                    <td>Savings</td>
+                {% else %}
+                    <td>Current</td>
+                {% endif %}
+                <td>{{ account.Amount }}</td>
+
+                {% set depositURL = "/Cashier/Deposit/" ~ account.AccountId|string %}
+                {% set withdrawURL = "/Cashier/Withdraw/" ~ account.AccountId|string %}
+                {% set transferURL = "/Cashier/Transfer/" ~ account.AccountId|string %}
+
+                <td> <a href={{ depositURL }} class="btn btn-success btn-xs" style="margin-right: 20px;">Deposit</a>       
+                    <a href={{ withdrawURL }} class="btn btn-danger btn-xs" style="margin-right: 20px;">Withdraw</a>        
+                    <a href={{ transferURL }} class="btn btn-warning btn-xs" style="margin-right: 20px;">Transfer</a></td>
+
+            </tr>
+
+        {% else %}
+            <p style="color:red"><b>Search for account from home page</b></p>
+        {% endif %}
+    </table>
+  
+    
+
+        </div>
+    </div>
+
+
+</section>
+
+<script type="text/javascript">
+function deposit(){
+    alert("Deposit successful.");
+};
+
+function withdraw(){
+    alert("Withdrawal successful");
+};
+
+function transfer(){
+    alert("Transfer successful");
+};
+
+
+var getParams = function (url) {
+	var params = {};
+	var parser = document.createElement('a');
+	parser.href = url;
+	var query = parser.search.substring(1);
+	var vars = query.split('&');
+	for (var i = 0; i < vars.length; i++) {
+		var pair = vars[i].split('=');
+		params[pair[0]] = decodeURIComponent(pair[1]);
+    
+    }
+    if(params[0]=='Deposit_successful')
+    deposit()
+}
+
+    
+</script>
+
+{% if message %}
+  {% if message=="Deposit_successful" %}
+      <script>deposit()</script>
+  {% elif message=="Withdraw_successful" %}
+      <script>withdraw()</script>
+{% else %}
+<script>transfer()</script>
+  {% endif %}
+{% endif %}
+
+
+{% endblock %}

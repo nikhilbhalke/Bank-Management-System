@@ -1,0 +1,51 @@
+{% extends "includes/layout.html" %}
+{% block body %}
+
+
+<section class="insert-data">
+<div class="well text-center">
+        <h1>Customer Status</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+    <table class="table table-striped">
+        <tr>
+            <th>Customer Id</th>            
+            <th>SSN ID</th>            
+            <th>Status</th>
+            <th>Message</th>
+            <th>Last Updated</th>
+            <th>Operations</th>
+        </tr>
+        <!-- <tr>
+            <td>01</td>
+            <td>Nikhil</td>
+            <td>abc@gmail.com</td>
+            <td>123456</td>          
+            <td>
+                <a href="custstatus.html" class="btn btn-warning btn-xs" >Refresh</a>        
+            </td>
+        </tr> -->
+
+        {% for customer in customers %}
+            <tr>
+                <td>{{ customer.CustomerId }}</td>
+                <td>{{ customer.SSNID }}</td>
+                <td>{{ customer.Status }}</td>
+                <td>{{ customer.Message }}</td>
+                <td>{{ customer.LastUpdated }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% if not customers %}
+        <p>No customers available!</p>
+    {% endif %}
+        </div>
+    </div>
+
+
+</section>
+
+
+{% endblock %}
+

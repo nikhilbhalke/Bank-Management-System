@@ -1,0 +1,52 @@
+
+{% extends "includes/layout.html" %}
+{% block body %}
+
+
+
+
+
+<section class="insert-data">
+
+
+  <div class="insert-form">
+        <h3 class="h3 text-center p-4 ">Delete Account</h3>
+        <div class="container text-center">
+            <form method="POST">
+                <div class="form-group row">
+                  <label for="acc-id" class="col col-form-label text-left">AccountId: <sup class="text-danger">*</sup></label>
+                  <div class="col-sm-7">
+                    <input type="number" class="form-control text-left" id="acc-id" name="acc-id" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                <p style="color:red">PS: Deleting account will also result in deleating all the transactions. Account balance related data will be lost.</p>
+                </div>  
+                <div class="buttons text-center p-2">               
+                <button type="submit" class="btn btn-danger">Delete Account</button>      
+                </div>
+         </form>
+        </div>
+    </div>     
+</section>
+
+
+
+<script type="text/javascript">
+  function del(){
+    alert("Account Deleted Successfully...");
+  };
+
+  function invalid(){
+    alert("Invalid account")
+  }
+</script>
+
+{% if message %}
+  {% if message=="successful" %}
+      <script>del()</script>
+  {% elif message=="invalid" %}
+  <script>invalid()</script> 
+  {% endif %}
+{% endif %}
+{% endblock %}
